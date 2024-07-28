@@ -5,6 +5,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background: theme("colors.light");
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme("colors.accent");
+  border-radius: 0.5rem;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply font-Poppins;
@@ -41,26 +56,8 @@
     max-width: 10%;
   }
 
-  .welcome-thumb-1 .welcome-animation {
-    z-index: 100;
-    position: relative;
-    animation: theme("animation.bounceHero4s");
-  }
-
-  .welcome-thumb-2 .welcome-animation {
-    z-index: 100;
-    position: relative;
-    animation: theme("animation.bounceHero6s");
-  }
-
-  .welcome-thumb-3 .welcome-animation {
-    z-index: 100;
-    position: relative;
-    animation: theme("animation.bounceHero8s");
-  }
-
   .sosial-media {
-    @apply py-4 mt-3;
+    @apply py-4 my-3;
   }
 
   .sosial-media a {
@@ -69,5 +66,25 @@
 
   .sosial-media a i {
     @apply w-[1.7rem] h-[1.7rem];
+  }
+
+  #portfolio .active {
+    @apply text-light bg-accent dark:bg-dark-accent;
+  }
+
+  #portfolio .portfolio-item.hide {
+    display: none;
+  }
+
+  #chatBox::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #chatBox::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+
+  #chatBox::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
   }
 }
